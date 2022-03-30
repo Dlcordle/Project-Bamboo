@@ -4,7 +4,7 @@ import { User } from '../models/user';
 import { url } from 'src/environments/environment';
 import { catchError, Observable, throwError } from 'rxjs';
 
-const userUrl=url+'/users'
+const userUrl = url + '/users';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,14 +14,15 @@ export class UserService {
     headers: new HttpHeaders({'Content-Type' : 'application/json'})
   }
 
-  //constructor(private http: HttpClient) {}
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  /*registerUser(user: User): Observable<User> {
-
+  registerUser(user: User): Observable<User> {
     return this.http.post<User>(`${userUrl}/add`, user, this.httpOptions).pipe(catchError(this.handleError));
-  }*/
+  }
 
+  loginUser(user: User): Observable<User> {
+    return this.http.post<User>(`${userUrl}/login`, user, this.httpOptions).pipe(catchError(this.handleError));
+  }
 
   private handleError(httpError: HttpErrorResponse) {
     if (httpError.error instanceof ErrorEvent) {

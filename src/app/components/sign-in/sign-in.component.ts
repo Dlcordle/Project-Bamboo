@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientMessage } from 'src/app/models/client-message';
 import { User } from 'src/app/models/user';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -11,7 +12,7 @@ export class SignInComponent {
   screen = "Sign Up";
   clientMessage = new ClientMessage();
   cUser = new User();
-  constructor() { }
+  constructor(private uServ: UserService) { }
 
   loginUser() {
 
@@ -23,6 +24,10 @@ export class SignInComponent {
 
     }
     this.clientMessage.message = "";
+    this.uServ.registerUser(this.cUser).subscribe(
+      arg => this.cUser = arg,
+      () => this.clientMessage.message = "An error occurred. Please try again later."
+    );
 
   }
 

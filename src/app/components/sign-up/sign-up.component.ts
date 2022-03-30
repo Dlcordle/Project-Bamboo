@@ -30,7 +30,10 @@ export class SignUpComponent  {
       return;
     }
     this.clientMessage.message = "";
-    //this.uServ.registerUser(this.cUser).subscribe(arg => this.cUser = arg);
+    this.uServ.registerUser(this.cUser).subscribe(
+      arg => this.cUser = arg,
+      () => this.clientMessage.message = "An error occurred. Please try again later."
+    );
    }
 
 

@@ -14,7 +14,15 @@ export class SignInComponent {
   constructor() { }
 
   loginUser() {
-    console.log(this.cUser);
+
+    if (!this.cUser.validLogIn()) {
+      this.clientMessage.message = "All fields must be filled in."
+      console.log(this.cUser);
+      //console.log(this.clientMessage.message);
+      return;
+
+    }
+    this.clientMessage.message = "";
 
   }
 

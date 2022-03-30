@@ -25,5 +25,8 @@ export class User {
   valid() {
     return (this.firstName.trim() && this.lastName.trim() && this.username.trim() && this.lastName.trim() &&this.password.trim())
   }
+  validLogIn() {
+    return (this.firstName.trim() && this.lastName.trim())
+  }
 
 }

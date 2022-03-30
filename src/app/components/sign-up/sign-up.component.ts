@@ -21,7 +21,15 @@ export class SignUpComponent  {
 
 
   registerUser(): void {
-    console.log(this.cUser);
+
+    if (!this.cUser.valid()) {
+      console.log("Invalid values");
+      console.log(this.cUser);
+      this.clientMessage.message = "All fields must be filled in."
+      //console.log(this.clientMessage.message);
+      return;
+    }
+    this.clientMessage.message = "";
     //this.uServ.registerUser(this.cUser).subscribe(arg => this.cUser = arg);
    }
 

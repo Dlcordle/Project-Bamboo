@@ -1,3 +1,4 @@
+import { FlashcardComponent } from './components/flashcard/flashcard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -6,11 +7,13 @@ import { MainComponent } from './components/main/main.component';
 const routes: Routes = [
 
   // define the path that corresponds with the component that should be rendered
-  {path: '', component:MainComponent, pathMatch: "full"}, // upon initializing the app, it loads the main component
+  {path: '', component: MainComponent, pathMatch: "full"}, // upon initializing the app, it loads the main component
   {path: 'main', component: MainComponent},
+  {path: 'flashcard', component: FlashcardComponent},
+
+  // {path: 'login', component: loginComponent},
 
   // {path: 'register', component: RegisterComponent},
-  // {path: 'all', component: AllComponent},
   // {path: 'find', component: FindComponent},
   // {path: 'remove', component: RemoveComponent},
 

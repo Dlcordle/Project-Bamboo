@@ -22,4 +22,8 @@ export class User {
     this.email = email;
   }
 
+  valid() {
+    return (this.firstName.trim() && this.lastName.trim() && this.username.trim() && this.lastName.trim() &&this.password.trim())
+  }
+
 }

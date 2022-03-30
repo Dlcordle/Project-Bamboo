@@ -9,13 +9,16 @@ import { NavComponent } from './components/nav/nav.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 
+import { FlashcardComponent } from './components/flashcard/flashcard.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     NavComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    FlashcardComponent
   ],
   imports: [
     BrowserModule,

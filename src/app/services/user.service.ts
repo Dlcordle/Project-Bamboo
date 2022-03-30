@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { User } from '../models/user';
 import { url } from 'src/environments/environment';
 import { catchError, Observable, throwError } from 'rxjs';
@@ -13,10 +13,14 @@ export class UserService {
   httpOptions = {
     headers: new HttpHeaders({'Content-Type' : 'application/json'})
   }
-  constructor(private http: HttpClient) { }
-  registerUser(user: User): Observable<User> {
+
+  //constructor(private http: HttpClient) {}
+  constructor() {}
+
+  /*registerUser(user: User): Observable<User> {
+
     return this.http.post<User>(`${userUrl}/add`, user, this.httpOptions).pipe(catchError(this.handleError));
-  }
+  }*/
 
 
   private handleError(httpError: HttpErrorResponse) {

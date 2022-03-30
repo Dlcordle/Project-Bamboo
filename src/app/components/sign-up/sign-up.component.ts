@@ -11,17 +11,19 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class SignUpComponent  {
 
+
   clientMessage = new ClientMessage();
-  title = "Project Bamboo";
   screen = "Sign Up";
+
   cUser = new User();
-  constructor(private userService: UserService) { }
+
+  constructor(private uServ: UserService) { }
+
 
   registerUser(): void {
     console.log(this.cUser);
-    this.userService.registerUser(this.cUser).subscribe(arg => this.cUser = arg);
+    //this.uServ.registerUser(this.cUser).subscribe(arg => this.cUser = arg);
    }
-
 
 
 

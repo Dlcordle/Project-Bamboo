@@ -1,3 +1,6 @@
+import { CreateComponent } from './components/create/create.component';
+import { ViewComponent } from './components/view/view.component';
+import { SearchComponent } from './components/search/search.component';
 import { FlashcardComponent } from './components/flashcard/flashcard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -10,6 +13,10 @@ const routes: Routes = [
   {path: '', component: MainComponent, pathMatch: "full"}, // upon initializing the app, it loads the main component
   {path: 'main', component: MainComponent},
   {path: 'flashcard', component: FlashcardComponent},
+  {path: 'search', component: SearchComponent},
+  {path: 'view', component: ViewComponent},
+  {path: 'create', component: CreateComponent},
+
 
   // {path: 'login', component: loginComponent},
 

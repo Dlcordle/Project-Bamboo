@@ -1,0 +1,22 @@
+<!-- <p>Login works!</p> -->
+<div class="m-2">
+  <h2>{{screen}}</h2>
+  <div>
+    <form class="row g-3">
+      <div class="col-md-6">
+        <label for="inputUsername" class="form-label">Username/Email</label>
+        <input [(ngModel)]="cUser.username" name="username" type="text" class="form-control" id="inputUsername">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Password</label>
+        <input [(ngModel)]="cUser.password" name="password" type="password" class="form-control" id="inputPassword4">
+      </div>
+      <div class="col-12 d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary" (click)="loginUser()">Login</button>
+      </div>
+      <div *ngIf="clientMessage.message.length > 0" class=" alert alert-success" role="alert">
+        {{clientMessage.message}}
+      </div>
+    </form>
+  </div>
+</div>

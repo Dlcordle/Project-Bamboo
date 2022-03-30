@@ -5,11 +5,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './view.component.html',
   styleUrls: ['./view.component.css']
 })
-export class ViewComponent implements OnInit {
+export class ViewComponent {
 
   constructor() { }
 
-  ngOnInit(): void {
+  public flipFlashcard(): void {
+
   }
+
 
 }

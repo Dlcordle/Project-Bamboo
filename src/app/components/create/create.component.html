@@ -9,25 +9,29 @@
 
     <form>
     <div class="row mb-3">
-      <label for="category" class="col-sm-2 col-form-label">Category:</label>
+      <label for="category" class="col-sm-2 col-form-label">Subject:</label>
       <div class="col-sm-10">
         <input [(ngModel)]="card.subject" name="subject" type="text" class="form-control" id="category" placeholder="The overall subject: Ex. Java, Angular, ect.">
       </div>
     </div>
 
+    <!--
     <div class="row mb-3">
       <label for="tag" class="col-sm-2 col-form-label">Tag:</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" id="tag" placeholder="Keywords pertaining to the subject: Ex. Java, Angular, ect.">
       </div>
     </div>
+    -->
 
+    <!--
     <div class="row mb-3">
       <label for="topic" class="col-sm-2 col-form-label">Topic:</label>
      <div class="col-sm-10">
         <input type="text" class="form-control" id="topic" placeholder="The more specific topic: Ex. Beans, Servlets, ect.">
       </div>
    </div>
+  -->
 
    <div class="row mb-3">
      <label for="question" class="col-sm-2 col-form-label">Question:</label>
@@ -39,23 +43,27 @@
    <div class="row mb-3">
      <label for="answer" class="col-sm-2 col-form-label">Answer:</label>
      <div class="col-sm-10">
-       <input type="text" class="form-control" id="answer" placeholder="The answer on the back of the card: Ex. Interpolation is...">
+       <input [(ngModel)]="card.answer" type="text" name="answer" class="form-control" id="answer" placeholder="The answer on the back of the card: Ex. Interpolation is...">
      </div>
    </div>
 
+   <!--
     <div class="row mb-3">
       <label for="example" class="col-sm-2 col-form-label">Example:</label>
       <div class="col-sm-10">
        <input type="text" class="form-control" id="example" placeholder="An example of the answer for clarity: Ex. 'The user's Id is ${userId}'. (Optional)">
      </div>
    </div>
+  -->
 
+  <!--
    <div class="row mb-3">
      <label for="url" class="col-sm-2 col-form-label">URL:</label>
      <div class="col-sm-10">
        <input type="text" class="form-control" id="url" placeholder="The link to a site that can elaborate further: Ex. Stackoverflow or some forum. (Optional)">
       </div>
    </div>
+  -->
 
     <button type="submit" class="btn btn-primary" (click)="createCardFunction()">Create Flashcard!</button>
     </form>

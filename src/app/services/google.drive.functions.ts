@@ -21,13 +21,14 @@ const drive = google.drive({
 
 const filePath = path.join(__dirname, 'assets/cards.json');
 
-async function uploadFile() {
-
+async function uploadFile() 
+{
   try 
   {
     const response = await drive.files.get({
       //q: "mimeType='application/json'",
-      fileId: "HelloTesterFile.txt"
+      mimeType: 'text/*',
+      name: "HelloTesterFile.txt"
     })
 
     console.log("Response: " + response);
@@ -54,4 +55,14 @@ async function uploadFile() {
       }
       console.log(errorMessage);
   }
+}
+
+@Component({
+  selector: 'app-create',
+  templateUrl: './create.component.html',
+  styleUrls: ['./create.component.css']
+})
+export class functionList 
+{
+  public runCreateFunction
 }

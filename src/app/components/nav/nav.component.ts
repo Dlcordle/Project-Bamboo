@@ -7,4 +7,21 @@ import { Component } from '@angular/core';
 })
 export class NavComponent {
 
+  public searchContent: string = '';
+
+  public performSearch() {
+
+    console.log(this.searchContent);
+
+
+    if (!this.searchContent.trim()) {
+      console.log('No search information entered');
+      return;
+    }
+
+
+  }
+
+
+
 }

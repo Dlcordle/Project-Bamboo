@@ -11,6 +11,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 import { FlashcardComponent } from './components/flashcard/flashcard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateComponent } from './components/create/create.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +20,15 @@ import { HttpClientModule } from '@angular/common/http';
     NavComponent,
     SignInComponent,
     SignUpComponent,
-    FlashcardComponent
+    FlashcardComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,7 +4,7 @@
     <h2 class="card-header text-center">Flashcard Viewer</h2>
   </div>
 
-  <div class="card-body">
+  <div class="card-body" *ngIf="!cardIsFlipped">
 
     <figure class="text-center">
       <blockquote class="blockquote">
@@ -15,19 +15,19 @@
       </figcaption>
     </figure>
 
-    <!-- Create a second form that will be hidden until the button is pressed. After, the first form is hidden and the second shows -->
-    <button type="submit" class="btn btn-primary" (click)="flipFlashcard()">Flip Flashcard!</button>
 
   </div>
 
-  <div class="card-body">
+  <div class="card-body" *ngIf="cardIsFlipped">
 
     <ul class="list-unstyled">
-      <li>This is a list.</li>
-      <li>It appears completely unstyled.</li>
-      <li>Structurally, it's still a list.</li>
-      <li>However, this style only applies to immediate child elements.</li>
-      <li>Nested lists:
+      <li>This is the answer for the flashcard. It can be short or relatively long, so we're going to have to figure out a clever way of wrapping the text so it doesn't go out of bounds or look bad. Ya know what I mean?.</li>
+      <br/>
+      <li>This can be where we can add an example of the answer to help further elaborate the point that was getting across</li>
+      <br/>
+      <li>A URL to a further resource could also be relatively helpful. That would be located here:</li>
+      <br/>
+      <li>Nested lists (I haven't decided what to do with the list yet. I'll give that a minute of thought):
         <ul>
           <li>are unaffected by this style</li>
           <li>will still show a bullet</li>
@@ -41,5 +41,10 @@
 
 </div>
 
+<!-- Create a second form that will be hidden until the button is pressed. After, the first form is hidden and the second shows -->
+<button type="submit" class="btn btn-primary" (click)="flipFlashcard()">Flip Flashcard!</button>
+
+<button type="submit" class="btn btn-primary" (click)="flipFlashcard()"> <= </button>
+<button type="submit" class="btn btn-primary" (click)="flipFlashcard()"> => </button>
 
 

@@ -8,9 +8,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './components/main/main.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { SearchComponent } from './components/search/search.component';
-import { ViewComponent } from './components/view/view.component';
-import { CreateComponent } from './components/create/create.component';
 
 const routes: Routes = [
 

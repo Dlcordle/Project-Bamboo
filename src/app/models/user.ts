@@ -1,32 +1,33 @@
+
 export class User {
   id: number;
-  firstName: string;
-  lastName: string;
+  fname: string;
+  lname: string;
   username: string;
-  password: string;
+  pwd: string;
   email: string;
 
   constructor(
     id: number=0,
-    firstName: string='',
-    lastName: string='',
+    fname: string='',
+    lname: string='',
     username: string='',
-    password: string='',
+    pwd: string='',
     email: string='',
 ) {
     this.id = id;
-    this.firstName = firstName;
-    this.lastName = lastName;
+    this.fname = fname;
+    this.lname = lname;
     this.username = username;
-    this.password = password;
+    this.pwd = pwd;
     this.email = email;
   }
 
   valid() {
-    return (this.firstName.trim() && this.lastName.trim() && this.username.trim() && this.lastName.trim() &&this.password.trim())
+    return (this.fname.trim() && this.lname.trim() && this.username.trim() && this.email.trim() &&this.pwd.trim())
   }
   validLogIn() {
-    return (this.username.trim() && this.password.trim())
+    return (this.username.trim() && this.pwd.trim())
   }
 
 }

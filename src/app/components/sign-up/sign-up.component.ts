@@ -26,13 +26,23 @@ export class SignUpComponent  {
       console.log("Invalid values");
       console.log(this.cUser);
       this.clientMessage.message = "All fields must be filled in."
-      //console.log(this.clientMessage.message);
+      console.log(this.clientMessage.message);
       return;
     }
     this.clientMessage.message = "";
+
+
     this.uServ.registerUser(this.cUser).subscribe(
-      arg => this.cUser = arg,
-      () => this.clientMessage.message = "An error occurred. Please try again later."
+      data => {
+        console.log("data: " + data);
+        this.cUser = new User();
+        this.cUser.username = data;
+        this.clientMessage.message = "Registered";
+      },
+      () => {
+        this.clientMessage.message = "An error occurred. Please try again later.";
+        this.cUser = new User();
+      }
     );
    }
 

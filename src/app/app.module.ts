@@ -14,6 +14,11 @@ import { FlashcardComponent } from './components/flashcard/flashcard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateComponent } from './components/create/create.component';
 
+import { CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN,  REDIRECT_URI} from 'src/app/Storage.json';
+import { Card } from 'src/app/models/card';
+
+//import { GoogleDriveFunctions } from 'src/app/services/google_drive_functions';
+
 @NgModule({
   declarations: [
     AppComponent,

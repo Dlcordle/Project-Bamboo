@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import data from './testFile.json';
-import card from 'src/app/models/card';
+import { Card } from 'src/app/models/card';
 
 
 @Component({
@@ -38,7 +38,7 @@ export class SearchComponent implements OnInit {
     if(Array.isArray(data)) {
       data.subjects.forEach((element) => {
         if (element.subject == 'java') {
-          this.temp.push(element);
+          //this.temp.push(element);
           console.log(this.temp);
         }
       })

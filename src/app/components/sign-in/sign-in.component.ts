@@ -24,8 +24,12 @@ export class SignInComponent {
 
     }
     this.clientMessage.message = "";
-    this.uServ.registerUser(this.cUser).subscribe(
-      arg => this.cUser = arg,
+    this.uServ.loginUser(this.cUser).subscribe(
+      arg => {
+        this.cUser.username = arg;
+        console.log("The logged in user: "+arg);
+
+      },
       () => this.clientMessage.message = "An error occurred. Please try again later."
     );
 

@@ -10,32 +10,30 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 import { FlashcardComponent } from './components/flashcard/flashcard.component';
-import { SearchComponent } from './components/search/search.component';
-import { ViewComponent } from './components/view/view.component';
-import { CreateComponent } from './components/create/create.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateComponent } from './components/create/create.component';
 
+import { CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN,  REDIRECT_URI} from 'src/app/Storage.json';
+import { Card } from 'src/app/models/card';
+
+//import { GoogleDriveFunctions } from 'src/app/services/google_drive_functions';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     NavComponent,
-    FlashcardComponent,
-    SearchComponent,
-    ViewComponent,
-    CreateComponent,
     SignInComponent,
     SignUpComponent,
-
-
+    FlashcardComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

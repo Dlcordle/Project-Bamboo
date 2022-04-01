@@ -15,7 +15,7 @@ export class NavComponent {
 
 
     if (!this.searchContent.trim()) {
-      console.log('No search information entered');
+      console.log('No search information entered'); // pass this onto either the search menu
       return;
     }
 

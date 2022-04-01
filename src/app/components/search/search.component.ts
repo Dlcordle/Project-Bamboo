@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import mode from './testFile.json';
+import data from './testFile.json';
+import card from 'src/app/models/card';
+
 
 @Component({
   selector: 'app-search',
@@ -11,7 +13,14 @@ export class SearchComponent implements OnInit {
 
     subject: string = '';
     id: number = 0;
-  constructor() { }
+    temp: string[];
+  constructor() {
+
+  this.temp = []   //initialization
+
+  }
+
+  holder: any = data.subjects[0];
 
 
 
@@ -21,8 +30,31 @@ export class SearchComponent implements OnInit {
 
     // const jasonTemp = JSON.parse(mode);
 
-    console.log(mode.subjects[0]);
+    console.log(data.subjects[0]);
 
+    console.log(this.holder.cards[0].info);
+
+
+    if(Array.isArray(data)) {
+      data.subjects.forEach((element) => {
+        if (element.subject == 'java') {
+          this.temp.push(element);
+          console.log(this.temp);
+        }
+      })
+    };
+
+
+
+    // (data.forEach(() => {
+    //   this.temp.push
+    // });
+    // data.json().filter(
+    //   function(data)
+    //   {
+    //     return data.subject == 'java'
+    //   }
+    // );
   }
 
   searchUsingKeyword() {

@@ -8,7 +8,6 @@ import { MainComponent } from './components/main/main.component';
 import { NavComponent } from './components/nav/nav.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import * as bcrypt from 'bcrypt';
 
 import { FlashcardComponent } from './components/flashcard/flashcard.component';
 import { HttpClientModule } from '@angular/common/http';

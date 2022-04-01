@@ -3,8 +3,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "resolveJsonModule":true,
-    "types": []
+    "types": [ "node"],
+    "typeRoots": [ "../node_modules/@types" ],
+    "resolveJsonModule":true
   },
   "paths": {
     "services/*": ["src/app/services/*"]

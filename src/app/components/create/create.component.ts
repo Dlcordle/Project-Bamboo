@@ -1,7 +1,7 @@
 import { JsonpClientBackend } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, getNgModuleById, OnInit } from '@angular/core';
 import { Card } from 'src/app/models/card';
-//import { GoogleDriveService } from 'src/app/services/google.drive.functions';
+import { functionList as GoogleDriveFunctions } from 'src/app/services/google.drive.functions';
 
 
 @Component({

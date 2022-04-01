@@ -19,7 +19,7 @@ const drive = google.drive({
     auth: oauth2Client
 });
 
-const filePath = path.join(__dirname, 'assets/cards.json');
+//const filePath = path.join(__dirname, 'assets/cards.json');
 
 async function uploadFile() 
 {
@@ -27,22 +27,11 @@ async function uploadFile()
   {
     const response = await drive.files.get({
       //q: "mimeType='application/json'",
-      mimeType: 'text/*',
-      name: "HelloTesterFile.txt"
+      mimeType: 'application/json',
+      name: "cards.json"
     })
 
     console.log("Response: " + response);
-
-    // const response = await drive.files.create({
-    //     requestBody: {
-    //         name: 'HelloTesterFile.txt',
-    //         mimeType: 'text/*'
-    //     },
-    //     media: {
-    //         mimeType: 'text/*',
-    //         body: fs.createReadStream(filePath)
-    //     }
-    // })
 
     console.log("Response Data: " + response.data);
   }
@@ -57,12 +46,10 @@ async function uploadFile()
   }
 }
 
-@Component({
-  selector: 'app-create',
-  templateUrl: './create.component.html',
-  styleUrls: ['./create.component.css']
-})
 export class functionList 
 {
-  public runCreateFunction
+  public runCreateFunction()
+  {
+    uploadFile();
+  }
 }

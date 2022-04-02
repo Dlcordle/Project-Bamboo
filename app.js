@@ -1,12 +1,14 @@
+import Info from "Storage.json"
+
 const { google } = require('googleapis');
 const path = require('path');
 const fs = require('fs');
 
-const CLIENT_ID = '935113732311-s87p2a6n3qb2849q6mhonv6lre9caqrm.apps.googleusercontent.com';
-const CLIENT_SECRET = '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';
-const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
+const CLIENT_ID = Info.CLIENT_ID;
+const CLIENT_SECRET = Info.CLIENT_SECRET;
+const REDIRECT_URI = Info.REDIRECT_URI;
 
-const REFRESH_TOKEN = '1//04W9FwrM0-n98CgYIARAAGAQSNwF-L9IrObitSMIZhDvEm_n5qP_UzPSoZc4faV8FuSZsYvVtHYRfkQPffQonodvfByC4_elBIYs';
+const REFRESH_TOKEN = Info.REFRESH_TOKEN;
 
 const oauth2Client = new google.auth.OAuth2(
     CLIENT_ID,

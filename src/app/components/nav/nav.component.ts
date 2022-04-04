@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { Card } from 'src/app/models/card';
 import { ViewComponent } from '../view/view.component';
 
@@ -10,14 +11,15 @@ import { ViewComponent } from '../view/view.component';
 export class NavComponent {
 
 
-  searchEx = new ViewComponent();
+  //searchEx = new ViewComponent();
 
   public  searchContent: string = '';
-   temp: Card[];
+  temp: Card[];
 
-  constructor() {
+  constructor(private searchEx: ViewComponent) {
 
     this.temp = []   //initialization
+    //this.searchContent = '';
 
     }
 
@@ -33,6 +35,9 @@ export class NavComponent {
   console.log(this.searchContent);
 
     this.searchEx.updateFlashcard(this.searchContent)
+
+
+
 
 
 

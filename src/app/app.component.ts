@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Card } from './models/card';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'project-bamboo';
+  currentCard = new Card(0, '', '', '', [], [], [], '')
 }

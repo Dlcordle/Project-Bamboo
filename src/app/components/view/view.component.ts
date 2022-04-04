@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
 import { Card } from 'src/app/models/card';
 import data from './testFile.json';
 
 
 
+var newCard;
+
 @Component({
   selector: 'app-view',
   templateUrl: './view.component.html',
-  styleUrls: ['./view.component.css']
+  styleUrls: ['./view.component.css'],
+
 })
 
 export class ViewComponent implements OnInit {
@@ -15,29 +19,32 @@ export class ViewComponent implements OnInit {
   cardIsFlipped: boolean = false;
   count: number = 0;
 
-  public newCard = new Card(0,'','','',[],[],[],'');
+
+  newCard = new Card(0,'','','',[],[],[],'');
   public cardList: Card[];
+  subject: string;
 
 
-
-  constructor() {
+  constructor(public AppComponent: AppComponent) {
     this.cardList = []
+    this.subject = '';
+    this.newCard = this.AppComponent.currentCard;
    }
 
   ngOnInit(): void {
 
   }
 
-  public changeHTML() {
+  public changeHTML(newCard) {
 
     var question = document.getElementById("question");
     if (question) {
-      question.innerHTML = this.newCard.question;
+      question.innerHTML = this.AppComponent.currentCard.question;
     }
 
     var answer = document.getElementById("answer");
     if (answer) {
-      answer.innerHTML = this.newCard.answer;
+      answer.innerHTML = this.AppComponent.currentCard.answer;
     }
 
     // var extra_resources = document.getElementById("extra_resources");
@@ -53,6 +60,9 @@ export class ViewComponent implements OnInit {
     console.log(this.newCard);
 
     this.cardIsFlipped = !this.cardIsFlipped;
+
+    //this.changeHTML(newCard);
+
     return this.cardIsFlipped;
 
 
@@ -60,10 +70,10 @@ export class ViewComponent implements OnInit {
 
   public changeFlashcard(count) {
 
-    console.log(this.cardList);
+    console.log(this.newCard);
     this.cardIsFlipped = false;
 
-    this.changeHTML();
+    this.changeHTML(newCard);
 
     if (count == -1) {
       console.log('Back')
@@ -103,8 +113,8 @@ export class ViewComponent implements OnInit {
           console.log(this.cardList);
           this.newCard = this.cardList[0];
 
-          this.changeHTML();
-
+          this.AppComponent.currentCard = this.newCard;
+          this.changeHTML(newCard);
 
           console.log(this.newCard);
          } // else { // create a if for if no matches
@@ -113,6 +123,8 @@ export class ViewComponent implements OnInit {
       })
     } ;
 
+    console.log("The app card is: ");
+    console.log(this.AppComponent.currentCard);
   }
 
 

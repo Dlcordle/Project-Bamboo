@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
 import { Card } from 'src/app/models/card';
 import data from './testFile.json';
 
@@ -15,13 +16,20 @@ export class ViewComponent implements OnInit {
   cardIsFlipped: boolean = false;
   count: number = 0;
 
-  public newCard = new Card(0,'','','',[],[],[],'');
+
+
+  public newCard: Card;
+  private fakeCard = this.appCompnent.currentCard;
   public cardList: Card[];
+  private billy;
 
 
 
-  constructor() {
-    this.cardList = []
+  constructor(private appCompnent: AppComponent) {
+    console.log("Constructing View Component");
+    this.billy = 5;
+    this.cardList = [];
+    this.newCard = this.appCompnent.currentCard;
    }
 
   ngOnInit(): void {
@@ -29,15 +37,18 @@ export class ViewComponent implements OnInit {
   }
 
   public changeHTML() {
+    console.log("The app card ìn HTML is ");
+    console.log(this.appCompnent.currentCard);
+    console.log("Changing HTML");
 
     var question = document.getElementById("question");
     if (question) {
-      question.innerHTML = this.newCard.question;
+      question.innerHTML = this.appCompnent.currentCard.question;
     }
 
     var answer = document.getElementById("answer");
     if (answer) {
-      answer.innerHTML = this.newCard.answer;
+      answer.innerHTML = this.appCompnent.currentCard.answer;
     }
 
     // var extra_resources = document.getElementById("extra_resources");
@@ -49,21 +60,39 @@ export class ViewComponent implements OnInit {
   }
 
   public flipFlashcard() {
+    console.log("The app card ìn flip is ");
+    console.log(this.appCompnent.currentCard.question);
 
-    console.log(this.newCard);
+
+    this.newCard = this.appCompnent.currentCard;
+    // console.log("Billy:");
+    // console.log(this.billy);
+
+    // console.log("Flipping Flashcard");
+    //     console.log("The card is ");
+    // console.log(this.newCard);
+    // console.log("The Fake card is ");
+    // console.log(this.fakeCard);
 
     this.cardIsFlipped = !this.cardIsFlipped;
+
     return this.cardIsFlipped;
 
 
   }
 
   public changeFlashcard(count) {
+    console.log("The app card ìn change flashcard is ");
+    console.log(this.appCompnent.currentCard.question);
 
-    console.log(this.cardList);
+    //this.newCard = this.appCompnent.currentCard;
+    // console.log("Changing Flashcard");
+    //     console.log("The card is ");
+    // console.log(this.newCard);
+    // console.log(this.cardList);
     this.cardIsFlipped = false;
 
-    this.changeHTML();
+    //this.changeHTML();
 
     if (count == -1) {
       console.log('Back')
@@ -78,13 +107,22 @@ export class ViewComponent implements OnInit {
   }
 
   public updateFlashcard(searchContent) {
+    // console.log("Updating Flashcard");
+    // this.billy = 10;
 
-    if(Array.isArray(data.subjects)) {
+
+
+    if (Array.isArray(data.subjects)) {
+
+
+
       data.subjects.forEach((element) => {
+        // console.log(element);
 
-        if (element.subject == searchContent) {
-          console.log('Element: ');
-          console.log(element);
+
+        if (element.subject.toUpperCase == searchContent.toUpperCase) {
+          // console.log('Element: ');
+          // console.log(element);
 
           element.cards.forEach((target) => {
             var temp = new Card(0,'','','',[],[],[],'');
@@ -99,11 +137,13 @@ export class ViewComponent implements OnInit {
 
             this.cardList.push(temp);
           })
-          console.log('The Card information: ');
-          console.log(this.cardList);
+          // console.log('The Card information: ');
+          // console.log(this.cardList);
           this.newCard = this.cardList[0];
+          this.fakeCard = this.newCard;
 
-          this.changeHTML();
+          this.appCompnent.currentCard = this.newCard;
+          //this.changeHTML();
 
 
           console.log(this.newCard);
@@ -113,6 +153,12 @@ export class ViewComponent implements OnInit {
       })
     } ;
 
+    // console.log("The card is ");
+    // console.log(this.newCard);
+
+
+    console.log("The app card is ");
+    console.log(this.appCompnent.currentCard);
   }
 
 

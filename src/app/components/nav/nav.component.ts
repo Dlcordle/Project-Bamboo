@@ -10,45 +10,27 @@ import { ViewComponent } from '../view/view.component';
 export class NavComponent {
 
 
-  searchEx = new ViewComponent();
+  //searchEx;
 
   public  searchContent: string = '';
    temp: Card[];
 
-  constructor() {
-
+  constructor(private searchEx: ViewComponent) {
     this.temp = []   //initialization
 
-    }
+    //searchEx = new ViewComponent();
+  }
 
   public performSearch() {
-
-
-
     if (!this.searchContent.trim()) {
       console.log('No search information entered'); // pass this onto either the search menu
       return;
     }
+    console.log(this.searchContent);
 
-  console.log(this.searchContent);
-
-    this.searchEx.updateFlashcard(this.searchContent)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    this.searchEx.updateFlashcard(this.searchContent);
+    this.searchEx.flipFlashcard();
+    this.searchEx.flipFlashcard;
     // if(Array.isArray(data.subjects)) {
     //   data.subjects.forEach((element) => {
 

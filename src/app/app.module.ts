@@ -37,7 +37,7 @@ import { Card } from 'src/app/models/card';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ViewComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

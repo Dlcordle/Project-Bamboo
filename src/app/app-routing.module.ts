@@ -4,6 +4,8 @@ import { SearchComponent } from './components/search/search.component';
 import { FlashcardComponent } from './components/flashcard/flashcard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { MainComponent } from './components/main/main.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
@@ -21,19 +23,13 @@ const routes: Routes = [
   {path: 'view', component: ViewComponent},
   {path: 'create', component: CreateComponent},
 
-
-  // {path: 'login', component: loginComponent},
-
-
-  // {path: 'register', component: RegisterComponent},
-  // {path: 'find', component: FindComponent},
-  // {path: 'remove', component: RemoveComponent},
-
   {path: '**', component: MainComponent} // a WildCard Route is used to handle unknown paths (ALWAYS goes last)
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes), CommonModule],
+  exports: [RouterModule],
+  declarations: [],
+
 })
 export class AppRoutingModule { }

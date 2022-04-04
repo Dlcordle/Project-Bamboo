@@ -8,7 +8,7 @@
 
     <figure class="text-center">
       <blockquote class="blockquote">
-        <p>This is where the flashcard's question will display.</p>
+        <p id="question">This is where the flashcard's question</p>
       </blockquote>
       <figcaption class="blockquote-footer">
         And maybe with a little more context down here as well. Who knows! Let's get wavy with it!
@@ -18,24 +18,14 @@
 
   </div>
 
-  <div class="card-body" *ngIf="cardIsFlipped">
+  <div class="card-body text-center" *ngIf="cardIsFlipped">
 
-    <ul class="list-unstyled">
-      <li>This is the answer for the flashcard. It can be short or relatively long, so we're going to have to figure out a clever way of wrapping the text so it doesn't go out of bounds or look bad. Ya know what I mean?.</li>
+
+      <p id="answer">This is the answer for the flashcard. It can be short or relatively long, so we're going to have to figure out a clever way of wrapping the text so it doesn't go out of bounds or look bad. Ya know what I mean?</p>
       <br/>
-      <li>This can be where we can add an example of the answer to help further elaborate the point that was getting across</li>
+      <p id="extra_resources">This can be where we can add an {{this.newCard.extra_resources}} of the answer to help further elaborate the point that was getting across</p>
       <br/>
-      <li>A URL to a further resource could also be relatively helpful. That would be located here:</li>
-      <br/>
-      <li>Nested lists (I haven't decided what to do with the list yet. I'll give that a minute of thought):
-        <ul>
-          <li>are unaffected by this style</li>
-          <li>will still show a bullet</li>
-          <li>and have appropriate left margin</li>
-        </ul>
-      </li>
-      <li>This may still come in handy in some situations.</li>
-    </ul>
+
 
   </div>
 
@@ -44,7 +34,7 @@
 <!-- Create a second form that will be hidden until the button is pressed. After, the first form is hidden and the second shows -->
 <button type="submit" class="btn btn-primary" (click)="flipFlashcard()">Flip Flashcard!</button>
 
-<button type="submit" class="btn btn-primary" (click)="flipFlashcard()"> <= </button>
-<button type="submit" class="btn btn-primary" (click)="flipFlashcard()"> => </button>
+<button type="submit" class="btn btn-primary" (click)="changeFlashcard(-1)"> <= </button>
+<button type="submit" class="btn btn-primary" (click)="changeFlashcard(1)"> => </button>
 
 

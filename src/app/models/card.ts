@@ -3,9 +3,9 @@ export class Card {
     subject: string;
     question: string;
     answer: string;
-    relevant_topics: [];
-    extra_resources: [];
-    relevant_cards: [];
+    relevant_topics: string[];
+    extra_resources: string[];
+    relevant_cards: string[];
     created_by: string;
 
     constructor(

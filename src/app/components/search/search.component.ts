@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import data from './testFile.json';
-import { Card } from 'src/app/models/card';
 
+import { NavComponent } from '../nav/nav.component';
 
 @Component({
   selector: 'app-search',
@@ -13,14 +12,13 @@ export class SearchComponent implements OnInit {
 
     subject: string = '';
     id: number = 0;
-    temp: string[];
+    // temp: Card[];
   constructor() {
 
-  this.temp = []   //initialization
+  // this.temp = []   //initialization
 
   }
 
-  holder: any = data.subjects[0];
 
 
 
@@ -28,47 +26,39 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // const jasonTemp = JSON.parse(mode);
+    // if(Array.isArray(data.subjects)) {
+    //   data.subjects.forEach((element) => {
 
-    console.log(data.subjects[0]);
+    //     if (element.subject == 'java') {
+    //       console.log('Element: ');
+    //       console.log(element);
 
-    console.log(this.holder.cards[0].info);
+    //       element.cards.forEach((target) => {
+    //         var newCard = new Card(0,'','','',[],[],[],'');
+    //         newCard.id = target.id;
+    //         newCard.subject = element.subject;
+    //         newCard.question = target.info.question;
+    //         newCard.answer = target.info.answer;
+    //         newCard.relevant_topics = target.info.relevant_topics;
+    //         newCard.extra_resources = target.info.extra_resources;
+    //         newCard.relevant_cards = target.info.relevant_cards;
+    //         newCard.created_by = target.info.created_by;
+
+    //         this.temp.push(newCard);
+    //       })
+    //       console.log('The Card information: ');
+    //       console.log(this.temp);
+    //     }
+    //   })
+    // };
 
 
-    if(Array.isArray(data)) {
-      data.subjects.forEach((element) => {
-        if (element.subject == 'java') {
-          //this.temp.push(element);
-          console.log(this.temp);
-        }
-      })
-    };
-
-
-
-    // (data.forEach(() => {
-    //   this.temp.push
-    // });
-    // data.json().filter(
-    //   function(data)
-    //   {
-    //     return data.subject == 'java'
-    //   }
-    // );
   }
 
-  searchUsingKeyword() {
-
+  searchUsingKeyword(keyword: string) {
+    keyword
     //console.log(NavComponent.performSearch())
   }
 
 
 }
-
-// fetch("./testFile.json")
-//     .then(function(resp){
-//       return resp.json();
-//     })
-//     .then(function(data) {
-//       console.log(data.subjects);
-//     });

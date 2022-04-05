@@ -1,3 +1,4 @@
+import { ViewComponent } from './components/view/view.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,15 +14,13 @@ import { FlashcardComponent } from './components/flashcard/flashcard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateComponent } from './components/create/create.component';
 
-import { CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN,  REDIRECT_URI} from 'src/app/Storage.json';
-import { Card } from 'src/app/models/card';
-
 //import { GoogleDriveFunctions } from 'src/app/services/google_drive_functions';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
+    ViewComponent,
     NavComponent,
     SignInComponent,
     SignUpComponent,
@@ -35,7 +34,7 @@ import { Card } from 'src/app/models/card';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ViewComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

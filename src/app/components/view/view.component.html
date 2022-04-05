@@ -4,40 +4,34 @@
     <h2 class="card-header text-center">Flashcard Viewer</h2>
   </div>
 
-  <div class="card-body">
+  <div class="card-body" *ngIf="!cardIsFlipped">
 
     <figure class="text-center">
       <blockquote class="blockquote">
-        <p>This is where the flashcard's question will display.</p>
+        <p id="question">{{this.AppComp.currentCard.question}}</p>
       </blockquote>
-      <figcaption class="blockquote-footer">
-        And maybe with a little more context down here as well. Who knows! Let's get wavy with it!
-      </figcaption>
     </figure>
 
-    <!-- Create a second form that will be hidden until the button is pressed. After, the first form is hidden and the second shows -->
-    <button type="submit" class="btn btn-primary">Flip Flashcard!</button>
+  </div>
+
+  <div class="card-body text-center" *ngIf="cardIsFlipped">
+
+      <p id="answer">{{this.AppComp.currentCard.answer}} </p>
+      <br/>
+      <p id="extra_resources">More information can be found at the following links: {{this.AppComp.currentCard.extra_resources}}</p>
+      <br/>
 
   </div>
 
-  <div class="card-body">
+</div>
 
-    <ul class="list-unstyled">
-      <li>This is a list.</li>
-      <li>It appears completely unstyled.</li>
-      <li>Structurally, it's still a list.</li>
-      <li>However, this style only applies to immediate child elements.</li>
-      <li>Nested lists:
-        <ul>
-          <li>are unaffected by this style</li>
-          <li>will still show a bullet</li>
-          <li>and have appropriate left margin</li>
-        </ul>
-      </li>
-      <li>This may still come in handy in some situations.</li>
-    </ul>
+<div class="justify-content-center d-flex" style="display:inline-block">
 
-  </div>
+  <button type="submit" class="btn btn-primary" (click)="changeFlashcard(-1)"> <= </button>
+
+  <button type="submit" class="btn btn-primary" (click)="flipFlashcard()">Flip Flashcard!</button>
+
+  <button type="submit" class="btn btn-primary" (click)="changeFlashcard(1)"> => </button>
 
 </div>
 

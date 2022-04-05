@@ -1,44 +1,44 @@
 {
-    "subjects": 
-    [ 
-        {
-            "subject": "java",
-            "cards":
-            [
-                {
-                    "id": 1,
-                    "info":
-                    [
-                        {
-                            "question": "sample question",
-                            "answer": "sample answer",
-                            "relevant_topics": [ "potato", "tomato"],
-                            "extra_resources": [ "potato.net", "tomato.net"],
-                            "relevant_cards": ["1","20","50"],
-                            "created_by": "tomato"
-                        }
-                    ]
-                },
-                
-                {
-                    "id": 2,
-                    "info":
-                    [
-                        {
-                            "question": "sample question two",
-                            "answer": "sample answer two",
-                            "relevant_topics": [ "potato two", "tomato two"],
-                            "extra_resources": [ "potato.net", "tomato.net"],
-                            "relevant_cards": ["12","22","52"],
-                            "created_by": "tomato2"
-                        }
-                    ]
-                }
-            ]
-        },
+  "subjects":
+  [
+      {
+          "subject": "java",
+          "cards":
+          [
+              {
+                  "id": 1,
+                  "info":
+                  [
+                      {
+                          "question": "sample question",
+                          "answer": "sample answer",
+                          "relevant_topics": [ "potato", "tomato"],
+                          "extra_resources": [ "potato.net", "tomato.net"],
+                          "relevant_cards": ["1","20","50"],
+                          "created_by": "tomato"
+                      }
+                  ]
+              },
 
-        {
+              {
+                  "id": 2,
+                  "info":
+                  [
+                      {
+                          "question": "sample question two",
+                          "answer": "sample answer two",
+                          "relevant_topics": [ "potato two", "tomato two"],
+                          "extra_resources": [ "potato.net", "tomato.net"],
+                          "relevant_cards": ["12","22","52"],
+                          "created_by": "tomato2"
+                      }
+                  ]
+              }
+          ]
+      },
 
-        }
-    ] 
+      {
+
+      }
+  ]
 }

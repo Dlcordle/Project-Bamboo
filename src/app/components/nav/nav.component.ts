@@ -1,7 +1,11 @@
 import { Output, EventEmitter } from '@angular/core';
 import { Component } from '@angular/core';
+<<<<<<< HEAD
 import { Card } from 'src/app/models/card';
 import { ViewComponent } from '../view/view.component';
+=======
+import { AppComponent } from 'src/app/app.component';
+>>>>>>> 473ec2ffe9693a07bf665ce6e26eb03916b2f634
 
 @Component({
   selector: 'app-nav',
@@ -10,6 +14,7 @@ import { ViewComponent } from '../view/view.component';
 })
 export class NavComponent {
 
+<<<<<<< HEAD
   public  searchContent: string = '';
   temp: Card[];
   navbarDown = false;
@@ -49,4 +54,11 @@ export class NavComponent {
   }
 
 
+=======
+  constructor(public appCom: AppComponent) { }
+  logoutUser() {
+    //this.appCom.isLoggedIn = false;
+    this.appCom.loggedInUser = "";
+  }
+>>>>>>> 473ec2ffe9693a07bf665ce6e26eb03916b2f634
 }

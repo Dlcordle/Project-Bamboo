@@ -5,6 +5,7 @@ import { url } from 'src/environments/environment';
 import { catchError, Observable, throwError } from 'rxjs';
 
 const userUrl = url + '/users';
+const googleDriveUrl = url + '/googledrive'
 @Injectable({
   providedIn: 'root'
 })
@@ -22,6 +23,29 @@ export class UserService {
 
   loginUser(user: User): Observable<User> {
     return this.http.post<User>(`${userUrl}/login`, user, this.httpOptions).pipe(catchError(this.handleError));
+  }
+
+  setGoogleDriveInitSetup(): Observable<File> 
+  {
+    return this.http.get<File>(`${googleDriveUrl}/`, this.httpOptions);
+  }
+
+  setGoogleDriveUserSetup(): Observable<File> 
+  {
+    return this.http.get<File>(`${googleDriveUrl}/googlesignin`, this.httpOptions);
+  }
+
+  // setGoogleOathSetup(): Observable<File> 
+  // {
+  //   return this.http.get<File>(`${googleDriveUrl}/oath`, this.httpOptions);
+  // }
+
+  createGoogleDriveFile(): Observable<File> 
+  {
+    var file:File = new File([],"");
+    var obj = this.http.post<File>(`${googleDriveUrl}/create`, file, this.httpOptions);
+    console.log("Made it to createGoogleDriveFile, obj is: "+ obj);
+    return obj;
   }
 
   private handleError(httpError: HttpErrorResponse) {

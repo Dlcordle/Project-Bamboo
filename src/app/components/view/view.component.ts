@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 import { Card } from 'src/app/models/card';
 import data from './testFile.json';
+import { NotificationService } from 'src/app/services/notification.service'
 
 @Component({
   selector: 'app-view',
@@ -21,17 +22,17 @@ export class ViewComponent {
   public cardList: Card[];
   subject: string;
 
-  // clientMessage = new ClientMessage();
-
-
-  constructor(public AppComp: AppComponent) {
+  constructor(private notifyService: NotificationService, public AppComp: AppComponent) {
     this.cardList = []
     this.subject = '';
     this.newCard = this.AppComp.currentCard;
     this.count = 0;
-    // this.clientMessage.message = "All fields must be filled in."
 
    }
+
+  showToasterInvalidSearch(){
+  this.notifyService.showError("No flashcards found with that subject", "Error!")
+}
 
    public updateFlashcard(searchContent) {
 
@@ -75,19 +76,14 @@ export class ViewComponent {
 
           console.log(this.count);
 
-
-
-         } // else { // create a if for if no matches
-    //   console.log('The search result was not found');
-    // }
-
+         }
       })
 
     } ;
 
           console.log(this.AppComp.cardList)
           if (this.AppComp.cardList.length == 0) {
-            console.log('This bitch empty. YEET!')
+            this.showToasterInvalidSearch();
           }
 
     console.log("The app card is: ");
@@ -149,15 +145,7 @@ export class ViewComponent {
     console.log(this.AppComp.cardList[this.count]);
 
     this.AppComp.currentCard = this.AppComp.cardList[this.count];
-    // if (navigation == -1) {
-    //   console.log('Back')
-    // }
 
-    // if (navigation == 1) {
-    //   console.log('Forward')
-    // }
-    // Take in the id of the flashcard that is currently shown and increment either up
-    // or down depending on the button that was clicked
     this.changeHTML(this.AppComp.currentCard);
     console.log(this.count);
     console.log(this.AppComp.cardList);

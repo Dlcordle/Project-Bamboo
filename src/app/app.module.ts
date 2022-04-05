@@ -13,6 +13,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { FlashcardComponent } from './components/flashcard/flashcard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CreateComponent } from './components/create/create.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //import { GoogleDriveFunctions } from 'src/app/services/google_drive_functions';
 
@@ -32,7 +34,9 @@ import { CreateComponent } from './components/create/create.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [ViewComponent],
   bootstrap: [AppComponent]

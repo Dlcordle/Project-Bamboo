@@ -10,80 +10,42 @@ import { ViewComponent } from '../view/view.component';
 })
 export class NavComponent {
 
-
-  //searchEx = new ViewComponent();
-
   public  searchContent: string = '';
   temp: Card[];
+  navbarDown = false;
 
   constructor(private searchEx: ViewComponent) {
 
-    this.temp = []   //initialization
-    //this.searchContent = '';
-
+    this.temp = []
     }
 
   public performSearch() {
 
-
-
     if (!this.searchContent.trim()) {
-      console.log('No search information entered'); // pass this onto either the search menu
+      console.log('No search information entered');
       return;
     }
 
-  console.log(this.searchContent);
+    console.log(this.searchContent);
 
     this.searchEx.updateFlashcard(this.searchContent)
 
+  }
 
+  public flipNavBar() {
+    let x = document.getElementById('navbarSupportedContent');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // if(Array.isArray(data.subjects)) {
-    //   data.subjects.forEach((element) => {
-
-    //     if (element.subject == this.searchContent) {
-    //       console.log('Element: ');
-    //       console.log(element);
-
-    //       element.cards.forEach((target) => {
-    //         var newCard = new Card(0,'','','',[],[],[],'');
-    //         newCard.id = target.id;
-    //         newCard.subject = element.subject;
-    //         newCard.question = target.info.question;
-    //         newCard.answer = target.info.answer;
-    //         newCard.relevant_topics = target.info.relevant_topics;
-    //         newCard.extra_resources = target.info.extra_resources;
-    //         newCard.relevant_cards = target.info.relevant_cards;
-    //         newCard.created_by = target.info.created_by;
-
-    //         this.temp.push(newCard);
-    //       })
-    //       console.log('The Card information: ');
-    //       console.log(this.temp);
-    //      } // else { // create a if for if no matches
-    // //   console.log('The search result was not found');
-    // // }
-    //   })
-    // } ;
-
-
-
+    if (x) {
+      this.navbarDown = !this.navbarDown;
+      if (this.navbarDown) {
+        x.style.display = 'flex';
+      }
+      else {
+        x.style.display = 'none';
+      }
+    }
+    else {
+    }
   }
 
 

@@ -10,10 +10,10 @@
                   "info":
 
                     {
-                      "question": "sample question",
-                      "answer": "sample answer",
+                      "question": "What is Java?",
+                      "answer": "A high-level OOP language with rich API libraries, widely used around the world, supported by Oracle. Write once run anywhere (WORA), statically typed, compiled language",
                       "relevant_topics": [ "potato", "tomato"],
-                      "extra_resources": [ "potato.net", "tomato.net"],
+                      "extra_resources": [ "https://github.com/220214-Enterprise-Angular/demos/tree/main/1-core-java"],
                       "relevant_cards": ["1","20","50"],
                       "created_by": "tomato"
                     }
@@ -25,10 +25,10 @@
                   "info":
 
                     {
-                      "question": "sample question two",
-                      "answer": "sample answer two",
+                      "question": "What is an object / class?",
+                      "answer": "Class is a blueprint for an object",
                       "relevant_topics": [ "potato two", "tomato two"],
-                      "extra_resources": [ "potato.net", "tomato.net"],
+                      "extra_resources": [ "https://github.com/220214-Enterprise-Angular/demos/tree/main/1-core-java"],
                       "relevant_cards": ["12","22","52"],
                       "created_by": "tomato2"
                     }
@@ -38,7 +38,7 @@
       },
 
       {
-        "subject": "spring",
+        "subject": "angular",
         "cards":
         [
             {
@@ -46,10 +46,10 @@
                 "info":
 
                   {
-                    "question": "sample question",
-                    "answer": "sample answer",
+                    "question": "What is an Observable? What’s the difference between it and a Promise?",
+                    "answer": "Promises deal with **one** asynchronous event at a time, while observables handle a **sequence** of asynchronous events over a period of time.",
                     "relevant_topics": [ "potato", "tomato"],
-                    "extra_resources": [ "potato.net", "tomato.net"],
+                    "extra_resources": [ "https://github.com/220214-Enterprise-Angular/demos/blob/main/7-angular/qc-questions.md"],
                     "relevant_cards": ["1","20","50"],
                     "created_by": "tomato"
                   }
@@ -61,10 +61,10 @@
                 "info":
 
                   {
-                    "question": "sample question two",
-                    "answer": "sample answer two",
+                    "question": "What does Webpack do for your ng project?",
+                    "answer": "Webpack is a tool that lets you compile JavaScript modules, also known as module bundler. Given a large number of files, it generates a single file (or a few files) that run your app. It can perform many operations: helps you bundle your resources",
                     "relevant_topics": [ "potato two", "tomato two"],
-                    "extra_resources": [ "potato.net", "tomato.net"],
+                    "extra_resources": [ "https://github.com/220214-Enterprise-Angular/demos/blob/main/7-angular/qc-questions.md"],
                     "relevant_cards": ["12","22","52"],
                     "created_by": "tomato2"
                   }

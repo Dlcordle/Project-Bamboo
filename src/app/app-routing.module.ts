@@ -19,7 +19,6 @@ const routes: Routes = [
   {path: 'register', component: SignUpComponent},
   {path: 'login', component: SignInComponent},
   {path: 'flashcard', component: FlashcardComponent},
-  {path: 'search', component: SearchComponent},
   {path: 'view', component: ViewComponent},
   {path: 'create', component: CreateComponent},
 

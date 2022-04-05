@@ -4,37 +4,36 @@
     <h2 class="card-header text-center">Flashcard Viewer</h2>
   </div>
 
-  <div class="card-body" *ngIf="!cardIsFlipped"> <!--!-->
+  <div class="card-body" *ngIf="!cardIsFlipped">
 
     <figure class="text-center">
       <blockquote class="blockquote">
-        <p id="question">{{this.AppComponent.currentCard.question}}</p>
+        <p id="question">{{this.AppComp.currentCard.question}}</p>
       </blockquote>
-      <figcaption class="blockquote-footer">
-        And maybe with a little more context down here as well. Who knows! Let's get wavy with it!
-      </figcaption>
     </figure>
-
 
   </div>
 
   <div class="card-body text-center" *ngIf="cardIsFlipped">
-<!-- for the flashcard. It can be short or relatively long, so we're going to have to figure out a clever way of wrapping the text so it doesn't go out of bounds or look bad. Ya know what I mean? -->
 
-      <p id="answer">{{this.AppComponent.currentCard.answer}} </p>
+      <p id="answer">{{this.AppComp.currentCard.answer}} </p>
       <br/>
-      <p id="extra_resources">This can be where we can add an {{this.newCard.extra_resources}} of the answer to help further elaborate the point that was getting across</p>
+      <p id="extra_resources">More information can be found at the following links: {{this.AppComp.currentCard.extra_resources}}</p>
       <br/>
-
 
   </div>
 
 </div>
 
-<!-- Create a second form that will be hidden until the button is pressed. After, the first form is hidden and the second shows -->
-<button type="submit" class="btn btn-primary" (click)="flipFlashcard()">Flip Flashcard!</button>
+<div class="justify-content-center d-flex" style="display:inline-block">
 
-<button type="submit" class="btn btn-primary" (click)="changeFlashcard(-1)"> <= </button>
-<button type="submit" class="btn btn-primary" (click)="changeFlashcard(1)"> => </button>
+  <button type="submit" class="btn btn-primary" (click)="changeFlashcard(-1)"> <= </button>
+
+  <button type="submit" class="btn btn-primary" (click)="flipFlashcard()">Flip Flashcard!</button>
+
+  <button type="submit" class="btn btn-primary" (click)="changeFlashcard(1)"> => </button>
+
+</div>
+
 
 

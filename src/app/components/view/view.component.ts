@@ -17,7 +17,6 @@ export class ViewComponent {
   public count: number;
   navigation: number = 0;
 
-
   newCard = new Card(0,'','','',[],[],[],'');
   public cardList: Card[];
   subject: string;

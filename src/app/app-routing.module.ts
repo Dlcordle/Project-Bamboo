@@ -1,7 +1,6 @@
 import { CreateComponent } from './components/create/create.component';
 import { ViewComponent } from './components/view/view.component';
 import { SearchComponent } from './components/search/search.component';
-import { FlashcardComponent } from './components/flashcard/flashcard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -18,7 +17,6 @@ const routes: Routes = [
   {path: 'main', component: MainComponent },
   {path: 'register', component: SignUpComponent},
   {path: 'login', component: SignInComponent},
-  {path: 'flashcard', component: FlashcardComponent},
   {path: 'view', component: ViewComponent},
   {path: 'create', component: CreateComponent},
 

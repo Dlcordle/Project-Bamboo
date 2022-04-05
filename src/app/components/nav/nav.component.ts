@@ -1,11 +1,9 @@
-import { Output, EventEmitter } from '@angular/core';
 import { Component } from '@angular/core';
-<<<<<<< HEAD
 import { Card } from 'src/app/models/card';
 import { ViewComponent } from '../view/view.component';
-=======
+import { NotificationService } from 'src/app/services/notification.service'
 import { AppComponent } from 'src/app/app.component';
->>>>>>> 473ec2ffe9693a07bf665ce6e26eb03916b2f634
+
 
 @Component({
   selector: 'app-nav',
@@ -14,20 +12,28 @@ import { AppComponent } from 'src/app/app.component';
 })
 export class NavComponent {
 
-<<<<<<< HEAD
+
   public  searchContent: string = '';
   temp: Card[];
   navbarDown = false;
 
-  constructor(private searchEx: ViewComponent) {
+  constructor(private notifyService: NotificationService, private searchEx: ViewComponent, public appCom: AppComponent) {
 
     this.temp = []
     }
 
+
+showToasterInvalidSearch(){
+      this.notifyService.showError("No flashcards found with that subject", "Error!")
+    }
+
   public performSearch() {
+
+
 
     if (!this.searchContent.trim()) {
       console.log('No search information entered');
+      this.showToasterInvalidSearch();
       return;
     }
 
@@ -53,12 +59,9 @@ export class NavComponent {
     }
   }
 
-
-=======
-  constructor(public appCom: AppComponent) { }
   logoutUser() {
     //this.appCom.isLoggedIn = false;
     this.appCom.loggedInUser = "";
   }
->>>>>>> 473ec2ffe9693a07bf665ce6e26eb03916b2f634
+
 }

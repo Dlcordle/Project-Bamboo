@@ -60,14 +60,14 @@ In application.properties
 
 ## Usage
 
-> Register for an account, and then login with that account.
-> Search for a concept to study (like Java or angular)
-> Click the flip card to see the back, or click left or right to go to the next cards
-> Click Create a flashcard and fill out the forms to add a card
+- Register for an account, and then login with that account.
+- Search for a concept to study (like Java or angular)
+- Click the flip card to see the back, or click left or right to go to the next cards
+- Click Create a flashcard and fill out the forms to add a card
 
 
 ## Contributors
 
-> Antonio Ragusa
-> Caleb Kirschbaum
-> David Cordle
+- Antonio Ragusa
+- Caleb Kirschbaum
+- David Cordle

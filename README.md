@@ -1,4 +1,4 @@
-# PROJECT NAME
+# Project Bamboo
 
 ## Project Description
 

@@ -32,8 +32,8 @@ To-do list:
 
 ## Getting Started
 
-git clone git@github.com:RevatureBambooOrg/Project-Bamboo.git
-git clone git@github.com:RevatureBambooOrg/Project-Bamboo-Backend.git
+- git clone git@github.com:RevatureBambooOrg/Project-Bamboo.git
+- git clone git@github.com:RevatureBambooOrg/Project-Bamboo-Backend.git
 
 On angular side:
 In root folder
